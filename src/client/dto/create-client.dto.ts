@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { IsNotEmpty, IsOptional, IsString, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateClientDto {
     @IsNotEmpty()
@@ -15,8 +15,8 @@ export class CreateClientDto {
     client_adresse: string;
 
     @IsOptional()
-    @IsNumber()
-    client_phone: number;
+    @IsString()
+    client_phone: string;
 
     @IsOptional()
     @IsString()

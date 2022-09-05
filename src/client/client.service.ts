@@ -8,19 +8,19 @@ import { ClientEntity } from './entities/client.entity';
 
 @Injectable()
 export class ClientService {
-  create(_createClientDto: CreateClientDto) {
+  create(createClientDto: CreateClientDto) {
     throw new Error('Method not implemented.');
   }
   findAll() {
     throw new Error('Method not implemented.');
   }
-  findOne(_arg0: number) {
+  findOne(arg0: number) {
     throw new Error('Method not implemented.');
   }
-  update(_arg0: number, _updateClientDto: UpdateClientDto) {
+  update(arg0: number, updateClientDto: UpdateClientDto) {
     throw new Error('Method not implemented.');
   }
-  remove(_arg0: number) {
+  remove(arg0: number) {
     throw new Error('Method not implemented.');
   }
   constructor(
@@ -28,8 +28,10 @@ export class ClientService {
     private clientRepository: Repository<ClientEntity>,
   ) {}
 
-  async findClientById(id) {
-    const client = await this.clientRepository.findOne(id);
+  async findClientById(id: number) {
+    const client = await this.clientRepository.findOne({
+      where: { id: id },
+    });
     if (!client) {
       throw new NotFoundException(`Le Client d'id ${id} n'existe pas.`);
     }
