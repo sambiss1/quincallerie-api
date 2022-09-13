@@ -6,21 +6,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.AppController = void 0;
-var common_1 = require("@nestjs/common");
-var AppController = /** @class */ (function () {
-    function AppController(appService) {
-        this.appService = appService;
+exports.CreateCategorieDto = void 0;
+/* eslint-disable prettier/prettier */
+var class_validator_1 = require("class-validator");
+var CreateCategorieDto = /** @class */ (function () {
+    function CreateCategorieDto() {
     }
-    AppController.prototype.getHello = function () {
-        return this.appService.getHello();
-    };
     __decorate([
-        (0, common_1.Get)()
-    ], AppController.prototype, "getHello");
-    AppController = __decorate([
-        (0, common_1.Controller)()
-    ], AppController);
-    return AppController;
+        (0, class_validator_1.IsNotEmpty)(),
+        (0, class_validator_1.IsString)()
+    ], CreateCategorieDto.prototype, "categorie");
+    return CreateCategorieDto;
 }());
-exports.AppController = AppController;
+exports.CreateCategorieDto = CreateCategorieDto;

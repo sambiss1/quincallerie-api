@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClientModule } from './client/client.module';
+import { MaterielModule } from './materiel/materiel.module';
+import { CategorieModule } from './categorie/categorie.module';
 import * as dotenv from 'dotenv';
 
 @Module({
@@ -21,6 +23,8 @@ import * as dotenv from 'dotenv';
       synchronize: true,
     }),
     ClientModule,
+    MaterielModule,
+    CategorieModule,
   ],
   controllers: [AppController],
   providers: [AppService],

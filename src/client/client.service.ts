@@ -8,25 +8,10 @@ import { ClientEntity } from './entities/client.entity';
 
 @Injectable()
 export class ClientService {
-  create(createClientDto: CreateClientDto) {
-    throw new Error('Method not implemented.');
-  }
-  findAll() {
-    throw new Error('Method not implemented.');
-  }
-  findOne(arg0: number) {
-    throw new Error('Method not implemented.');
-  }
-  update(arg0: number, updateClientDto: UpdateClientDto) {
-    throw new Error('Method not implemented.');
-  }
-  remove(arg0: number) {
-    throw new Error('Method not implemented.');
-  }
   constructor(
     @InjectRepository(ClientEntity)
     private clientRepository: Repository<ClientEntity>,
-  ) {}
+  ) { }
 
   async findClientById(id: number) {
     const client = await this.clientRepository.findOne({

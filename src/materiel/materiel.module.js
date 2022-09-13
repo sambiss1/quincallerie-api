@@ -6,21 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.AppController = void 0;
+exports.MaterielModule = void 0;
 var common_1 = require("@nestjs/common");
-var AppController = /** @class */ (function () {
-    function AppController(appService) {
-        this.appService = appService;
+var materiel_service_1 = require("./materiel.service");
+var materiel_controller_1 = require("./materiel.controller");
+var MaterielModule = /** @class */ (function () {
+    function MaterielModule() {
     }
-    AppController.prototype.getHello = function () {
-        return this.appService.getHello();
-    };
-    __decorate([
-        (0, common_1.Get)()
-    ], AppController.prototype, "getHello");
-    AppController = __decorate([
-        (0, common_1.Controller)()
-    ], AppController);
-    return AppController;
+    MaterielModule = __decorate([
+        (0, common_1.Module)({
+            controllers: [materiel_controller_1.MaterielController],
+            providers: [materiel_service_1.MaterielService]
+        })
+    ], MaterielModule);
+    return MaterielModule;
 }());
-exports.AppController = AppController;
+exports.MaterielModule = MaterielModule;

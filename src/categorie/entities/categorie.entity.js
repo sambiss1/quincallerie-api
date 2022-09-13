@@ -6,21 +6,22 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.AppController = void 0;
-var common_1 = require("@nestjs/common");
-var AppController = /** @class */ (function () {
-    function AppController(appService) {
-        this.appService = appService;
+exports.Categorie = void 0;
+/* eslint-disable prettier/prettier */
+var typeorm_1 = require("typeorm");
+var Categorie = /** @class */ (function () {
+    function Categorie() {
     }
-    AppController.prototype.getHello = function () {
-        return this.appService.getHello();
-    };
     __decorate([
-        (0, common_1.Get)()
-    ], AppController.prototype, "getHello");
-    AppController = __decorate([
-        (0, common_1.Controller)()
-    ], AppController);
-    return AppController;
+        (0, typeorm_1.PrimaryGeneratedColumn)({ name: 'id_categorie' })
+    ], Categorie.prototype, "id");
+    __decorate([
+        (0, typeorm_1.Column)({ length: 50, name: 'categorie' })
+    ], Categorie.prototype, "categorie");
+    Categorie = __decorate([
+        (0, typeorm_1.Entity)('categorie')
+    ], Categorie);
+    return Categorie;
 }());
-exports.AppController = AppController;
+exports.Categorie = Categorie;
+exports["default"] = Categorie;
